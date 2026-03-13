@@ -194,17 +194,102 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="../style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
 </head>
 
 <body>
+   
+  <!-- ===== ADD NAVBAR ===== -->
+   <nav class="fixed top-0 left-0 w-full z-30 px-6 py-4 flex items-center justify-between
+bg-white/5 backdrop-blur-md border-b border-white/10">
 
+  <!-- Logo -->
+  <div class="text-xl font-bold bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+    AzisDev
+  </div>
+
+  <!-- Button -->
+  <button onclick="openCitySidebar()"
+  class="px-5 py-2 rounded-lg text-sm font-medium
+  bg-white/10 hover:bg-white/20 border border-white/20
+  transition backdrop-blur">
+    Periksa kota kamu!
+  </button>
+
+</nav>
+
+<div id="cityOverlay"
+class="fixed inset-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none
+transition-opacity duration-300 z-40"
+onclick="closeCitySidebar()">
+</div>
+
+<div id="citySidebar"
+class="
+fixed top-0 right-0 h-full w-full md:w-1/2 max-w-lg
+bg-white text-gray-900
+dark:bg-gray-900/95 dark:text-white
+backdrop-blur-xl
+transform translate-x-full transition-transform duration-300
+z-50 p-8 overflow-y-auto
+">
+
+  <div class="flex justify-between items-center mb-8">
   <!-- ===== DARK MODE TOGGLE ===== -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
     <span id="toggleEmoji">☀️</span>
     <span class="toggle-track" id="toggleTrack"></span>
     <span id="toggleLabel">Light</span>
   </button>
+
+    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+Pilih Kota Kamu
+</h2>
+
+    <button onclick="closeCitySidebar()"
+    class="text-gray-400 hover:text-white text-xl">
+      ✕
+    </button>
+
+  </div>
+
+  <!-- Grid kota -->
+  <div class="grid grid-cols-2 gap-3">
+
+    <a href="/jasa-pembuatan-website-jakarta/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Jakarta
+    </a>
+
+    <a href="/jasa-pembuatan-website-bandung/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Bandung
+    </a>
+
+    <a href="/jasa-pembuatan-website-surabaya/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Surabaya
+    </a>
+
+    <a href="/jasa-pembuatan-website-makassar/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Makassar
+    </a>
+
+    <a href="/jasa-pembuatan-website-padang/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Padang
+    </a>
+
+    <a href="/jasa-pembuatan-website-medan/"
+    class="p-4 rounded-xl text-center font-medium transition bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+      Medan
+    </a>
+
+  </div>
+
+</div>
+
 
   <!-- Scroll Progress Bar -->
   <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
@@ -747,6 +832,31 @@
   </footer>
 
   <script>
+    // ===== navbar =====
+  function openCitySidebar(){
+
+  document
+  .getElementById("citySidebar")
+  .classList.remove("translate-x-full")
+
+  document
+  .getElementById("cityOverlay")
+  .classList.remove("opacity-0","pointer-events-none")
+
+}
+
+function closeCitySidebar(){
+
+  document
+  .getElementById("citySidebar")
+  .classList.add("translate-x-full")
+
+  document
+  .getElementById("cityOverlay")
+  .classList.add("opacity-0","pointer-events-none")
+
+}
+  
     // ===== DARK MODE =====
     const themeBtn = document.getElementById('themeToggle');
     const emoji = document.getElementById('toggleEmoji');

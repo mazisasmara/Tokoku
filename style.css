@@ -149,7 +149,7 @@
 
     /* Dark mode toggle button */
     .theme-toggle {
-      position: fixed; top: 1.25rem; right: 1.25rem; z-index: 1000;
+      position: fixed; top: 3.59rem; right: 1.6rem; z-index: 1000;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 999px;
