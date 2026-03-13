@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://shop.azisasmara.my.id/sitemap.xml
