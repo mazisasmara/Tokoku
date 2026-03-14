@@ -79,4 +79,4 @@ Harga dapat disesuaikan berdasarkan kompleksitas project dan fitur tambahan yang
 
 ---
 
-**© 2026 Tokoku | Jasa Pembuatan Website Profesional**
+**© 2026 AzisDev | Jasa Pembuatan Website Profesional**
