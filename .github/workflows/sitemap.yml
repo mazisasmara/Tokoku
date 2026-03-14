@@ -7,31 +7,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  sitemap_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@c8b23c5cba1c1df3daf35fda4e8c55b5e619f3c3
-
-    - name: Install Node.js
-      uses: actions/setup-node@60edb5dd545a775178fac7a93fab3f2d92038d4f
-      with:
-        node-version: 18
-
-    - name: Install Sitemap Package
-      run: npm install -g sitemap-generator-cli
+      uses: actions/checkout@v4
 
     - name: Generate Sitemap
-      run: |
-        npx sitemap-generator-cli https://shop.azisasmara.my.id --filepath ./sitemap.xml
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://shop.azisasmara.my.id/
+        # File akan otomatis tersimpan di sitemap.xml
 
     - name: Commit Sitemap
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add ./sitemap.xml
-        git commit -m "Generate sitemap via GitHub Actions" || echo "No changes to commit"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Cek apakah file berubah
+        if [[ -n $(git status -s) ]]; then
+          git add .
+          git commit -m "Update sitemap via Cicirello Action"
+          git push
+        else
+          echo "No changes to commit"
+        fi
