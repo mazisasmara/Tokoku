@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@c8b23c5cba1c1df3daf35fda4e8c55b5e619f3c3
 
     - name: Install Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@60edb5dd545a775178fac7a93fab3f2d92038d4f
       with:
         node-version: 18
 
