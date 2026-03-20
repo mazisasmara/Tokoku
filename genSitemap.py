@@ -15,18 +15,18 @@ sitemap_footer = '</urlset>'
 
 # Halaman utama & section
 urls = [
-    {"loc": "https://shop.azisasmara.my.id/", "freq": "weekly", "priority": "1.0"},
-    {"loc": "https://shop.azisasmara.my.id/#services", "freq": "monthly", "priority": "0.8"},
-    {"loc": "https://shop.azisasmara.my.id/#pricing", "freq": "monthly", "priority": "0.9"},
-    {"loc": "https://shop.azisasmara.my.id/#why", "freq": "monthly", "priority": "0.7"},
-    {"loc": "https://shop.azisasmara.my.id/#faq", "freq": "monthly", "priority": "0.8"},
-    {"loc": "https://shop.azisasmara.my.id/#contact", "freq": "monthly", "priority": "0.7"},
+    {"loc": "https://azisdev.my.id/", "freq": "weekly", "priority": "1.0"},
+    {"loc": "https://azisdev.my.id/#services", "freq": "monthly", "priority": "0.8"},
+    {"loc": "https://azisdev.my.id/#pricing", "freq": "monthly", "priority": "0.9"},
+    {"loc": "https://azisdev.my.id/#why", "freq": "monthly", "priority": "0.7"},
+    {"loc": "https://azisdev.my.id/#faq", "freq": "monthly", "priority": "0.8"},
+    {"loc": "https://azisdev.my.id/#contact", "freq": "monthly", "priority": "0.7"},
 ]
 
 # Generate URL kota
 for city in cities:
     urls.append({
-        "loc": f"https://shop.azisasmara.my.id/{city}/",
+        "loc": f"https://azisdev.my.id/{city}/",
         "freq": "monthly",
         "priority": "0.9"
     })
